@@ -1,6 +1,10 @@
+using PartsUnlimitedApi;
 using PartsUnlimitedApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var startup = new Startup(builder.Configuration);
+startup.ConfigureServices(builder.Services);
 
 // Add services to the container.
 
@@ -12,6 +16,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<PartsUnlimitedContext>(ServiceLifetime.Scoped);
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
