@@ -86,6 +86,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+          app-name: 'hackaton1team03'
+          slot-name: 'production'
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_5a711a04b3b54c9cbdb2dcfe15e426f2 }}
+          package: .
